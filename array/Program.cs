@@ -8,21 +8,20 @@ namespace array
         {
             Console.Write("Введите кол-во элементов массива:\t");
             int elementCount = int.Parse(Console.ReadLine());
-            int[] nombers = new int[elementCount];
             int[] numbers = new int[elementCount];
             Console.WriteLine("------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\nОднмерный массив в строку:");
+            Console.WriteLine("\nОдномерный массив в строку:");
             Console.ResetColor();
-            for (int i = 0; i < nombers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                Console.Write("\nВведите элемент массива под индексом {0}:\t", i+1);
-                nombers[i] = int.Parse(Console.ReadLine());
+                numbers[i] = int.Parse(Console.ReadLine());
             }
             Console.WriteLine("\nВывод массива:");
-            for (int i = 0; i < nombers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                Console.Write(nombers[i]);
+                Console.Write(numbers[i]);
             }
             Console.WriteLine("\n------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -70,7 +69,7 @@ namespace array
                 case 0:
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nСпасибо, что использовали мою программу, можете поддержать этот проэкт денежными средствами :)");
+                    Console.WriteLine("\nСпасибо, что использовали мою программу, можете поддержать этот проект денежными средствами :)");
                     Console.ResetColor();
                     break;
 
