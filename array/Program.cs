@@ -9,33 +9,34 @@ namespace array
             Console.Write("Введите кол-во элементов массива:\t");
             int elementCount = int.Parse(Console.ReadLine());
             int[] numbers = new int[elementCount];
+            int[] num = numbers;
             Console.WriteLine("------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\nОдномерный массив в строку:");
+            Console.WriteLine("\nОднмерный массив в строку:");
             Console.ResetColor();
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < num.Length; i++)
             {
-               Console.Write("\nВведите элемент массива под индексом {0}:\t", i+1);
-                numbers[i] = int.Parse(Console.ReadLine());
+                Console.Write("\nВведите элемент массива под индексом {0}:\t", i + 1);
+                num[i] = int.Parse(Console.ReadLine());
             }
             Console.WriteLine("\nВывод массива:");
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < num.Length; i++)
             {
-                Console.Write(numbers[i]);
+                Console.Write(num[i]);
             }
             Console.WriteLine("\n------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nОдномерный массив в столбец:");
             Console.ResetColor();
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < num.Length; i++)
             {
                 Console.Write("\nВведите элемент массива под индексом {0}:\t", i + 1);
-                numbers[i] = int.Parse(Console.ReadLine());
+                num[i] = int.Parse(Console.ReadLine());
             }
             Console.WriteLine("\nВывод массива:");
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < num.Length; i++)
             {
-                Console.WriteLine(numbers[i]);
+                Console.WriteLine(num[i]);
             }
             Console.WriteLine("------------------------------------------");
 
@@ -43,29 +44,28 @@ namespace array
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Одномерный массив в диагональ:");
             Console.ResetColor();
-            int[] num = new int[4];
             for (int i = 0; i < num.Length; i++)
             {
                 Console.Write("\nВведите элемент массива под индексом {0}:\t", i + 1);
                 num[i] = int.Parse(Console.ReadLine());
             }
             Console.WriteLine("\nВывод массива:");
-            Console.WriteLine(num[0]);
-            Console.Write(" ");
-            Console.WriteLine(num[1]);
-            Console.Write("  ");
-            Console.WriteLine(num[2]);
-            Console.Write("   ");
-            Console.WriteLine(num[3]);
+            int n = 0;
+            for (int i = 0; i < num.Length; i++)
+            {
+                string v = "".PadLeft(n, ' ');
+                Console.WriteLine(v + num[i]);
+                n++;
+            }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("\nХотите попробывать еще раз? 1 - да, 0 - нет");
-            int repet = int.Parse(Console.ReadLine());
-            switch (repet)
+            int repeat = int.Parse(Console.ReadLine());
+            switch (repeat)
             {
                 case 1:
                     Console.Clear();
                     Main();
-                        break;
+                    break;
                 case 0:
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -74,7 +74,7 @@ namespace array
                     break;
 
             }
-            
+
             Console.ReadKey();
 
 
